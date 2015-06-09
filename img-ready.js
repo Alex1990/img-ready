@@ -38,14 +38,16 @@
     var proxyImg = new Image();
 
     if (opts.onload) {
-      proxyImg.onload = function() {
-        opts.onload.call(proxyImg);
+      proxyImg.onload = function(e) {
+        e = e || window.event;
+        opts.onload.call(proxyImg, e);
       };
     }
 
     if (opts.onerror) {
-      proxyImg.onerror = function() {
-        opts.onerror.call(proxyImg);
+      proxyImg.onerror = function(e) {
+        e = e || window.event;
+        opts.onerror.call(proxyImg, e);
       };
     }
 
@@ -59,6 +61,7 @@
         to[p] = from[p];
       }
     }
+    return to;
   }
 
   return imgReady;
