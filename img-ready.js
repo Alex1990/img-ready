@@ -1,5 +1,5 @@
 /*!
- * img-ready - When the image is loaded, a callback will be called.
+ * img-ready - Execute a callback after an image loaded. 
  * https://github.com/Alex1990/img-ready
  * Under the MIT license | 2015 (c) Alex Chao
  */

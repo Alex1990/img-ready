@@ -1,6 +1,6 @@
 {
-  "name": "module-name",
-  "description": "",
+  "name": "img-ready",
+  "description": "Execute a callback after an image loaded",
   "version": "0.1.0",
   "author": {
     "name": "Alex Chao",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/Alex1990/module-name.git"
+    "url": "git://github.com/Alex1990/img-ready.git"
   },
   "bugs": {
-    "url": "https://github.com/Alex1990/module-name/issues"
+    "url": "https://github.com/Alex1990/img-ready/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/Alex1990/module-name/blob/master/LICENSE"
+      "url": "https://github.com/Alex1990/img-ready/blob/master/LICENSE"
     }
   ],
   "dependencies": {},
