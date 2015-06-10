@@ -1,15 +1,19 @@
 test('options.onload', function(assert) {
   var done = assert.async();
 
-  var cat = document.getElementById('octocat');
-  var catUrl = 'https://assets-cdn.github.com/images/modules/logos_page/Octocat.png';
+  var img1 = document.getElementById('img1');
+  var imgUrl1 = 'https://c.s-microsoft.com/zh-cn/CMSImages/mslogo.png?version=856673f8-e6be-0476-6669-d5bf2300391d';
 
-  imgReady(catUrl, {
-    onload: function() {
+  imgReady(imgUrl1, {
+    onload: function(e) {
       ok(true, 'onload callback called');
-      ok(this instanceof Image, 'this refers to the proxy image element');
+      ok(this.width > 0, 'The image width is greater than zero');
+      ok(this.height > 0, 'The image height is greater than zero');
+      // In IE6, the below line code will throw error.
+      // ok(this instanceof Image, 'The context this refers to an Image instance, that is an image element.');
+      equal(e.type, 'load', 'The load event object is passed as the first argument');
       done();
-      cat.src = this.src;
+      img1.src = this.src;
     }
   });
 
@@ -19,8 +23,9 @@ test('options.onerror', function(assert) {
   var done = assert.async();
 
   imgReady('/non-exist.png', {
-    onerror: function() {
+    onerror: function(e) {
       ok(true, 'onerror callback called');
+      equal(e.type, 'error', 'The error event object is passed as the first argument');
       done();
     }
   });
@@ -29,13 +34,13 @@ test('options.onerror', function(assert) {
 test('callback parameter', function(assert) {
   var done = assert.async();
 
-  var logo = document.getElementById('logo');
-  var logoUrl = 'https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png';
+  var img2 = document.getElementById('img2');
+  var imgUrl2 = 'http://c.s-microsoft.com/zh-cn/CMSImages/pmg-newOfficeLogo_135x30.png?version=25e941c1-7583-e0fd-d341-f146cf43e100';
 
-  imgReady(logoUrl, function() {
+  imgReady(imgUrl2, function() {
     ok(true, 'callback parameter is called');
     done();
-    logo.src = this.src;
+    img2.src = this.src;
   });
     
 });
