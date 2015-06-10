@@ -18,11 +18,13 @@ var img = document.getElementById('logo');
 var imgUrl = 'https://assets-cdn.github.com/images/modules/logos_page/Octocat.png';
 
 imgReady(imgUrl, {
-  onload: function() {
+  onload: function(e) {
+    console.log(e); // `e` is load event object
     console.log(this); // `this` is an Image object
     img.src = this.src;
   },
-  onerror: function() {
+  onerror: function(e) {
+    console.log(e); // `e` is error event object
     console.log('load error');
   }
 });
@@ -31,7 +33,8 @@ imgReady(imgUrl, {
 Or, a callback (onload) can be passed as the second parameter.
 
 ```js
-imgReady(imgUrl, function() {
+imgReady(imgUrl, function(e) {
+  console.log(e); // `e` is load event object
   console.log(this); // `this` is an Image object
   img.src = this.src;
 });
