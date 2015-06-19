@@ -1,6 +1,6 @@
 {
   "name": "img-ready",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Execute a callback after an image loaded",
   "main": "img-ready.js",
   "author": {
