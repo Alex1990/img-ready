@@ -1,7 +1,8 @@
 {
   "name": "img-ready",
-  "description": "Execute a callback after an image loaded",
   "version": "0.1.0",
+  "description": "Execute a callback after an image loaded",
+  "main": "img-ready.js",
   "author": {
     "name": "Alex Chao",
     "email": "alexchao1990@gmail.com"
